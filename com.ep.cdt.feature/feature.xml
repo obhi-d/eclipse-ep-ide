@@ -2,7 +2,7 @@
 <feature
       id="com.ep.cdt.feature"
       label="IDE Enhancer"
-      version="1.0.0.qualifier"
+      version="1.0.0.1"
       provider-name="Endless Possibilites"
       license-feature="org.eclipse.cdt"
       license-feature-version="8.3.0.201402142303">

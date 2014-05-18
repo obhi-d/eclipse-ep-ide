@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.ui"
+            class="com.ep.cdt.views.NavigableView"
+            icon="icons/filenav_ico_small.png"
+            id="com.ep.cdt.views.NavigableView"
+            name="Navigable View">
+      </view>
+   </extension>
+   <extension
+         id="com.ep.cdt.views.navigableView"
+         point="org.eclipse.ui.navigator.viewer">
+    <viewerContentBinding viewerId="com.ep.cdt.views.NavigableView">
+       <includes>
+          <contentExtension pattern="org.eclipse.ui.navigator.resourceContent"/>
+          <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+       </includes>
+    </viewerContentBinding>
+    <viewerActionBinding
+            viewerId="com.ep.cdt.views.NavigableView">
+         <excludes>
+         	<actionExtension pattern="org.eclipse.ui.navigator.resources.WorkingSetActions" />
+         </excludes>
+         <includes>
+         	<!-- Fixed in 4.4 -->
+         	<!--<actionExtension pattern="org.eclipse.ui.navigator.resources.*>-->
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.GoIntoActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.GotoActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.NewActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.OpenActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.PortingActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.PropertiesActionProvider" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.ResourceMgmtActions" /> 
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.UndoRedoActionProvider" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.WorkManagementActionProvider" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.actions.EditActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.actions.RefactorActions" />
+			<actionExtension pattern="org.eclipse.ui.navigator.resources.UndoRedoActionProvider" /> 
+         </includes>
+     </viewerActionBinding>    
+  </extension> 
+</plugin>
